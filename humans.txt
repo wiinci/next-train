@@ -1,0 +1,7 @@
+/* Next Train was made by Mardav Wala */
+/* twitter.com/_vinci */
+/* humanstxt.org */
+
+/* SITE */
+  Standards: HTML5, CSS3
+  Components: jQuery
