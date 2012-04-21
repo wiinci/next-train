@@ -137,15 +137,9 @@ h1 + p { text-shadow: 0 1px 0 #fff; margin-top: -.65em; padding-left: .3em }
 .time { margin: .65em .5em .5em 0; font-size: 5.6em; padding: 0 0.55em }
 .time li {float: left; margin-right:.35em}
 .time span { color: #cfcfcf }
-h6 span { padding-right: 1em; background-color: #f0f0f0; text-shadow: 0 2px 0 #fff }
+h6 span { padding-right: 1em; background-color: #f0f0f0; text-shadow: 0 1px 0 #fff }
 #by {font-size: 1.2em; text-align: right; margin-bottom: 1.5em; letter-spacing: 0.03em; color: #444; text-shadow: 0 1px 0 #fff}
 #by a {text-shadow: 0 1px 0 transparent, 0px 2px 0 rgba(0, 0, 0, 0.5)}
-/*
-h6 span { font-size: 1.1em; margin-bottom: -2.18181818em; letter-spacing: 0.2em; text-transform: uppercase; color: #777; font-family: 'MolotRegular'; display: block}
-h6 span:after { border-top: 1px dotted #777; content: ""; display: block; height: 0.1em; margin-top: 1.1em; float: right}
-h6.disclaimer span:after { width: 90%}
-h6.privacy span:after { width: 87%}
-*/
 /*	--------------------------------------------------
 :: Lists
 -------------------------------------------------- */
