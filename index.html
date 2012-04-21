@@ -67,22 +67,32 @@
 	<!-- Included JS Files -->
 	<script src="javascripts/foundation.js"></script>
 	<script src="javascripts/app.js"></script>
-  <script src="javascripts/jsrender.min.js"></script>
-  <script src="javascripts/sacrt.js"></script>
-  <script id="stubs" type="text/x-jquery-tmpl">
-    <div class="stub-{{=route}}">
-      <p class="title allcaps misobold">{{=route}}line Train To</p>
-      <div class="end allcaps league">
-        <p>{{=to}}</p>
-      </div>
-    </div>
-    <div class="stub-bottom">
-      <p class="title allcaps misobold">Arriving At <span>{{=eta}}</span> In</p>
-      <ul class="time league clearfix">
-        <li class="min{{=index}}">{{=mins}} <span>Minutes</span></li>
-        <li class="sec{{=index}}">{{=secs}} <span>Seconds</span></li>
-      </ul>
-    </div>
-  </script>
+	<script src="javascripts/jsrender.min.js"></script>
+	<script src="javascripts/sacrt.js"></script>
+	<script id="stubs" type="text/x-jquery-tmpl">
+	<div class="stub-{{=route}}">
+	  <p class="title allcaps misobold">{{=route}}line Train To</p>
+	  <div class="end allcaps league">
+		<p>{{=to}}</p>
+	  </div>
+	</div>
+	<div class="stub-bottom">
+	  <p class="title allcaps misobold">Arriving At <span>{{=eta}}</span> In</p>
+	  <ul class="time league clearfix">
+		<li class="min{{=index}}">{{=mins}} <span>Minutes</span></li>
+		<li class="sec{{=index}}">{{=secs}} <span>Seconds</span></li>
+	  </ul>
+	</div>
+	</script>
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-31071855-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
 </body>
 </html>
