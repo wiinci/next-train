@@ -1,10 +1,10 @@
 ﻿$(document).ready(function() {
-  //$('.schedule').hide();
-  //$('#spinner').show();
+  $('#sacrttime').hide();
+  $('#spinner').show();
 	navigator.geolocation.getCurrentPosition(init, error);
 });
 function error(msg) {
-	console.log(msg);
+	//console.log(msg);
 }
 function init(a) {
 	myCommute.lat = a.coords.latitude;
@@ -23,6 +23,8 @@ var myCommute = {
 	DN:[],
   epochTime:[],
 	routes:[],
+  distances:[],
+  names:[],
 	STATIONS : {
 		blueline : {
 			watt : { name: "Watt Ave & I-80", lat: 38.644922, lng: -121.384812, up: 2, dn: 11, r: 533 },
@@ -36,50 +38,43 @@ var myCommute = {
 			flrn : { name: "Florin Rd", lat: 38.497317, lng: -121.471467, up: 10, dn: 3, r: 533 },
 			mead : { name: "Meadowview Rd", lat: 38.482687, lng: -121.466981, up: 11, dn: 2, r: 533 }
 		},
+  // Up = To Folsom
+  // Dn = To Sacramento Valley Station
 		goldline : {
-			sact : { name: "Sacramento Valley Station", lat: 38.584323, lng: -121.499307, up: 2, dn: 13, r: 507 },
-			ond8 : { name: "8th St & O St", lat: 38.575579, lng: -121.498680, up: 3, dn: 11, r: 507 },
-			one6 : { name: "16th St", lat: 38.569773, lng: -121.489018, up: 4, dn: 10, r: 507 },
-			two9 : { name: "29th St", lat: 38.564317, lng: -121.470550, up: 5, dn: 9, r: 507 },
-			six5 : { name: "University Ave & 65th St", lat: 38.552300, lng: -121.426566, up: 6, dn: 8, r: 507 },
-			mnlv : { name: "Watt Ave & Manlove Rd", lat: 38.554066, lng: -121.372654, up: 7, dn: 7, r: 507 },
-			mthr : { name: "Mather Field Rd", lat: 38.584973, lng: -121.310611, up: 8, dn: 6, r: 507 },
-			snrs : { name: "Sunrise Blvd", lat: 38.606965, lng: -121.266108, up: 9, dn: 5, r: 507 },
-			hazl : { name: "Hazel Ave", lat: 38.630621, lng: -121.211678, up: 10, dn: 3, r: 507 },
-			flsm : { name: "Folsom Blvd & Iron Point Rd", lat: 38.644967, lng: -121.189683, up: 11, dn: 2, r: 507 }
+			sact : { name: "Sacramento Valley Station", lat: 38.584323, lng: -121.499307, up: 1, dn: 14, r: 507 },
+			ond8 : { name: "8th St & O St", lat: 38.575579, lng: -121.498680, up: 3, dn: 12, r: 507 },
+			one6 : { name: "16th St", lat: 38.569773, lng: -121.489018, up: 5, dn: 10, r: 507 },
+			two9 : { name: "29th St", lat: 38.564317, lng: -121.470550, up: 6, dn: 9, r: 507 },
+			six5 : { name: "University Ave & 65th St", lat: 38.552300, lng: -121.426566, up: 8, dn: 7, r: 507 },
+			mnlv : { name: "Watt Ave & Manlove Rd", lat: 38.554066, lng: -121.372654, up: 10, dn: 5, r: 507 },
+			mthr : { name: "Mather Field Rd", lat: 38.584973, lng: -121.310611, up: 11, dn: 4, r: 507 },
+			snrs : { name: "Sunrise Blvd", lat: 38.606965, lng: -121.266108, up: 12, dn: 3, r: 507 },
+			hazl : { name: "Hazel Ave", lat: 38.630621, lng: -121.211678, up: 13, dn: 2, r: 507 },
+			flsm : { name: "Folsom Blvd & Iron Point Rd", lat: 38.644967, lng: -121.189683, up: 14, dn: 1, r: 507 }
 		}
 	},
 	// Functions
 	getNearestStation: function(){
-		var d, elat=0, elng=0, ename, distances=[], names=[], s;
-		$.each(myCommute.STATIONS, function(i,e){
-			$.each(e, function(n, t){
-				elat = t.lat;
-				elng = t.lng;
-				ename = t.name;
-				d = myCommute.getDistance(elat, elng); // distance to station from current location
-				distances.push(d);
-				names.push(ename);
-			});
-		});
-    //function() {
-      console.log('ns');
-      /*
-      s = myCommute.arrayMin(distances);
-      console.log(distances);
-      console.log(s.m);
-      console.log(s.i);
-      myCommute.closeststation = names[s.i]; // use that index to get the name of the station
-      myCommute.distancetocloseststation = (s.m * myCommute.mi).toFixed(2);
-      */
-      s = distances.min().toString();
-      e = distances.indexOf(s);
-      alert(e);
-      myCommute.closeststation = names[e]; // use that index to get the name of the station
-      myCommute.distancetocloseststation = (s * myCommute.mi).toFixed(2);
-      console.log(myCommute.closeststation, myCommute.distancetocloseststation);
-      myCommute.getTrainArrivalTime();    
-//    }
+		var d, elat=0, elng=0, ename, s, e;
+    $.each(myCommute.STATIONS, function(i,e){
+      $.each(e, function(n, t){
+        elat = t.lat;
+        elng = t.lng;
+        ename = t.name;
+        d = myCommute.getDistance(elat, elng); // distance to station from current location
+        myCommute.distances.push(d);
+        myCommute.names.push(ename);
+      });
+    });
+    //console.log(myCommute.distances);
+    s = myCommute.distances.min().toFixed(2);
+    //alert(s);
+    myCommute.distancetocloseststation = (s * myCommute.mi).toFixed(2);
+    e = myCommute.distances.indexOf((s.toString()));
+    //alert(e);
+    myCommute.closeststation = myCommute.names[e]; // use that index to get the name of the station
+    //console.log(myCommute.closeststation, myCommute.distancetocloseststation);
+    myCommute.getTrainArrivalTime();    
   },
 	getTrainArrivalTime: function(){
 		var eup, edn, er, up=[], dn=[], r=[], t=[];
@@ -104,17 +99,17 @@ var myCommute = {
 		//console.log(myCommute.routes);
 		switch(new Date().getUTCDay()){
 			case 0: // Sunday
-				t = [5, 6]; break;
+				t = [6, 5]; break;
 			case 6: // Saturday
-				t = [3, 4]; break;
+				t = [4, 3]; break;
 			default: // Weekday
-				t = [1, 2]; break;
+				t = [2, 1]; break;
 		}
 		if (r.length > 1) {
-			yql1="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.sacrt.com%2Fschedules%2Fcurrent%2Froutes%2FR" + r[0] + ".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[0] + "%5D%2Ftbody%2Ftr%2Ftd%5B" + up[0] + "%5D%2Fspan'&format=json&callback=?";
-			yql2="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.sacrt.com%2Fschedules%2Fcurrent%2Froutes%2FR" + r[0] + ".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[1] + "%5D%2Ftbody%2Ftr%2Ftd%5B" + dn[0] + "%5D%2Fspan'&format=json&callback=?";
-			yql3="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.sacrt.com%2Fschedules%2Fcurrent%2Froutes%2FR" + r[1] + ".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[0] + "%5D%2Ftbody%2Ftr%2Ftd%5B" + up[1] + "%5D%2Fspan'&format=json&callback=?";
-			yql4="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.sacrt.com%2Fschedules%2Fcurrent%2Froutes%2FR" + r[1] + ".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[1] + "%5D%2Ftbody%2Ftr%2Ftd%5B" + dn[1] + "%5D%2Fspan'&format=json&callback=?";
+			yql1="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.sacrt.com%2Fschedules%2Fcurrent%2Froutes%2FR" + r[0] + ".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[0] + "%5D%2Ftr%2Ftd%5B" + up[0] + "%5D%2Fp'&format=json&callback=?";
+			yql2="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.sacrt.com%2Fschedules%2Fcurrent%2Froutes%2FR" + r[0] + ".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[1] + "%5D%2Ftr%2Ftd%5B" + dn[0] + "%5D%2Fp'&format=json&callback=?";
+			yql3="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.sacrt.com%2Fschedules%2Fcurrent%2Froutes%2FR" + r[1] + ".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[0] + "%5D%2Ftr%2Ftd%5B" + up[1] + "%5D%2Fp'&format=json&callback=?";
+			yql4="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.sacrt.com%2Fschedules%2Fcurrent%2Froutes%2FR" + r[1] + ".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[1] + "%5D%2Ftr%2Ftd%5B" + dn[1] + "%5D%2Fp'&format=json&callback=?";
 			//execute yqls
 			myCommute.execYQL(yql1, function(){
 				var t1 = "";
@@ -142,17 +137,17 @@ var myCommute = {
 				});
 			});
 		} else {
-			//yql1="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.sacrt.com%2Fschedules%2Fcurrent%2Froutes%2FR" + r[0] +".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[0] + "%5D%2Ftbody%2Ftr%2Ftd%5B" + up[0] + "%5D%2Fspan'&format=json&callback=?";
-			yql1="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.sacrt.com%2Fschedules%2Fcurrent%2Froutes%2FR" + 507 +".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[0] + "%5D%2Ftbody%2Ftr%2Ftd%5B" + up[0] + "%5D%2Fspan'&format=json&callback=?";
-			//yql2="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.sacrt.com%2Fschedules%2Fcurrent%2Froutes%2FR" + r[0] +".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[1] + "%5D%2Ftbody%2Ftr%2Ftd%5B" + dn[0] + "%5D%2Fspan'&format=json&callback=?";
-			yql2="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.sacrt.com%2Fschedules%2Fcurrent%2Froutes%2FR" + 507 +".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[1] + "%5D%2Ftbody%2Ftr%2Ftd%5B" + dn[0] + "%5D%2Fspan'&format=json&callback=?";
+			yql1="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.sacrt.com%2Fschedules%2Fcurrent%2Froutes%2FR" + 507 +".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[0] + "%5D%2Ftr%2Ftd%5B" + up[0] + "%5D%2Fp'&format=json&callback=?";
+			yql2="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.sacrt.com%2Fschedules%2Fcurrent%2Froutes%2FR" + 507 +".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[1] + "%5D%2Ftr%2Ftd%5B" + dn[0] + "%5D%2Fp'&format=json&callback=?";
 			//execute yqls
 			myCommute.execYQL(yql1, function(){
+        //alert("yql1");
 				var t1 = "";
 				t1 += this;
 				myCommute.UP.push(t1)
 				//console.log(myCommute.UP);
 				myCommute.execYQL(yql2, function(){
+          //alert("yql2");
 					var t2 = "";
 					t2 += this;
 					myCommute.DN.push(t2)
@@ -163,9 +158,10 @@ var myCommute = {
 		} // end r.length if-else
 	},
 	render: function() {
+   //alert("meta");
     meta = [];
     var r, route, from, to, time;
-    console.log(myCommute.UP,myCommute.DN,myCommute.routes,myCommute.epochTime,myCommute.closeststation);
+    //console.log(myCommute.UP,myCommute.DN,myCommute.routes,myCommute.epochTime,myCommute.closeststation);
     $('.station').remove();
     $('.stub-top').append('<p class="station allcaps league">'+myCommute.closeststation+'</p>');
     $.each(myCommute.UP, function(i,v){
@@ -190,12 +186,12 @@ var myCommute = {
     //Render using jsRender
     $('#stublist').empty().remove();
     $('.schedule').find('.twelve').append('<div id="stublist"></div>');
-    //$('#spinner').fadeOut('fast', function(){
+    $('#spinner').fadeOut('fast', function(){
       $('#stublist').html(
         $('#stubs').render(meta)
       );
-      $('.schedule').fadeIn('slow');
-    //});
+      $('#sacrttime').fadeIn('slow');
+    });
     myCommute.updateTime();
 	},
   updateTime: function() {
@@ -229,14 +225,11 @@ var myCommute = {
 	execYQL: function(yql, cb){
 		var now = new Date(), t=0, d, c, r;
 		$.getJSON(yql, function(cbfunc){
-			$(cbfunc.query.results.span).each(function(i,e){
-				c = e.content;
-				if (c.length > 1) {
-					d = myCommute.getArrivalTime(c);
-					if (d > now) {
-						if(t===0) {t=1;r=c;myCommute.epochTime.push(d);if(cb && typeof(cb)=="function"){cb.call(r);}}
-					}
-				}
+			$(cbfunc.query.results.p).each(function(i,e){
+        d = myCommute.getArrivalTime(e);
+        if (d > now) {
+          if(t===0) {t=1;r=c;myCommute.epochTime.push(d);if(cb && typeof(cb)=="function"){cb.call(r);}}
+        }
 			});
 		});
 	},
@@ -273,13 +266,6 @@ var myCommute = {
     secs = Math.floor(diff%60);
     secs < 10 ? '0' + secs : secs;
     return {min:mins, sec:secs};
-  },
-  arrayMin: function(arr) { 
-    var m, i;
-    m = Math.min.apply(Math, arr);
-    i = arr.indexOf(m.toString());
-    alert(i);
-    return {m:m,i:i};
   }
 };
 if (typeof(Number.prototype.toRad) === "undefined") {

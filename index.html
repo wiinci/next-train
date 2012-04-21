@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
 <!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
@@ -10,7 +10,7 @@
 	<!-- Set the viewport width to device width for mobile -->
 	<meta name="viewport" content="width=device-width" />
 
-	<title>Next Train &ndash; Sacramento Light Rail Schedule</title>
+	<title>SacRT Time &ndash; Sacramento Light Rail Schedule</title>
   
 	<!-- Included CSS Files -->
 	<link rel="stylesheet" href="stylesheets/foundation-trimmed.css">
@@ -30,18 +30,17 @@
 	<div class="container">
 		<div class="row">
 			<header id="heading" class="twelve columns">
-        <h1>Next Train</h1>
+        <h1>SacRT Time</h1>
         <p>Sacramento Light Rail Schedule&mdash;Simplified</p>
 			</header>
 		</div>
-		<div class="row">
+		<div id="spinner" class="row" style="display:none"></div>
+		<div id="sacrttime" class="row">
 			<section id="main" class="eight columns">
-				<div id="spinner" class="row"></div>
         <div class="row schedule">
           <div class="twelve columns">
             <div class="stub-top">
               <p class="title allcaps misobold">Nearest Station</p>
-              <!--<p class="station allcaps league">Watt Ave &amp; Manlove Rd</p>-->
             </div><!-- /.stub-top -->
             <div id="stublist"></div><!-- /#stublist -->
 					</div><!-- /.twelve.columns -->
@@ -49,12 +48,13 @@
         <p id="by">Made for SacRT commuters by <a href="http://twitter.com/_vinci">Mardav Wala</a></p>
 			</section>
 			<section class="four columns">
-			  <p id="about"><strong>Next Train</strong> strives to cut through the noise by providing a clean, minimal, location-based app that answers the most important question for any commuter:<br/><q>What time does my train arrive&mdash;at a station near me?</q></p>
+			  <p id="about"><strong>SacRT Time</strong> strives to cut through the noise by providing a clean, minimal, location-based app that answers the most important question for any commuter:<br/><q>What time does my train arrive&mdash;at a station near me?</q></p>
         <p>★</p>
         <h6 class="disclaimer"><span>Disclaimer</span></h6>
         <p class="small">The content of this page is for general information purposes only. Any reliance you place on such information is therefore strictly at your own risk. In no event will we be liable for any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.</p>
+        <p class="small">SacRT Time is a personal project of Mardav Wala. This site is in not afflifiated to the Sacramento Regional Transit in any form.</p>
         <h6 class="privacy"><span>Privacy Policy</span></h6>
-        <p class="small">Next Train is  committed to ensuring that your privacy is protected. We only collect the location information relevant to look up the nearest station to you. This information is neither stored nor is it used in any way to identify you.</p>
+        <p class="small">SacRT Time is committed to ensuring that your privacy is protected. We only collect the location information relevant to look up the nearest station to you. This information is neither stored nor is it used in any way to identify you.</p>
 			</section>
 		</div>
     <div class="row small-print">

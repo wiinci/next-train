@@ -1,4 +1,4 @@
-﻿/* FONT_FACE */
+/* FONT_FACE */
 /*  GOLD: #fce016
     BLUE: #003d6b */
 @font-face {
@@ -117,7 +117,7 @@ h1 + p { text-shadow: 0 2px 0 #fff; margin-top: -.65em; padding-left: .3em }
 #about + p:after { right: 7em }
 #about + p:before { left: 7em; }
 .schedule, #spinner { background-color: rgba(255,255,255,0.9); border: 5px solid transparent; border-radius: 16px; box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.25) }
-#spinner { background: url("../images/misc/spinner.gif") 50% 50% no-repeat rgba(0,0,0,0.06); height: 20em }
+#spinner { background: url("../images/misc/spinner.gif") 50% 50% no-repeat rgba(0,0,0,0.06); height: 20em; display: none; width: 96%; margin: 1em auto 2.5em }
 .stub-top p {margin-top: 0; padding: 0 .5em}
 .stub-top p:first-child, .stub-gold > p, .stub-blue > p, .stub-bottom > p { margin-top: 0; padding: .35em 0.5em }
 .stub-top, .stub-gold, .stub-blue, .stub-bottom {background: url("../images/misc/squares.png") repeat;  margin: 0 0 5px;text-shadow:0 1px 0 transparent, 0 2px 0 rgba(0, 0, 0, 0.1)}
