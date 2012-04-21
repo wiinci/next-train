@@ -120,21 +120,21 @@ h1 + p { text-shadow: 0 1px 0 #fff; margin-top: -.65em; padding-left: .3em }
 #spinner { background: url("../images/misc/spinner.gif") 50% 50% no-repeat rgba(0,0,0,0.06); height: 20em; display: none; width: 96%; margin: 1em auto 2.5em }
 .stub-top p {margin-top: 0; padding: 0 .5em}
 .stub-top p:first-child, .stub-gold > p, .stub-blue > p, .stub-bottom > p { margin-top: 0; padding: .35em 0.5em }
-.stub-top, .stub-gold, .stub-blue, .stub-bottom {background: url("../images/misc/squares.png") repeat;  margin: 0 0 5px;text-shadow:0 1px 0 transparent, 0 2px 0 rgba(0, 0, 0, 0.3)}
+.stub-top, .stub-gold, .stub-blue, .stub-bottom {background: url("../images/misc/squares.png") repeat;  margin: 0 0 5px;text-shadow:0 1px 0 rgba(255,255,255,0.1), 0 2px 0 rgba(0, 0, 0, 0.2)}
 .stub-top { background-color: #287233; color: #fff; border-bottom: 1px solid rgba(0,0,0,0.5); border-top-left-radius: 12px; border-top-right-radius: 12px;}
-.title { border-bottom: 3px double rgba(0,0,0,0.1) }
+.title { border-bottom: 3px double rgba(0,0,0,0.07) }
 .title span { background-color: #eee; color: #444; padding: 0 0.3em; border-radius: 4px; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1), 0 1px 0 transparent, 0 2px 0 #fff; box-shadow:0 2px 0 rgba(0, 0, 0, 0.2) }
-.station { font-size: 4.8em; color: #f7f7f7; margin-bottom: 0.5em; line-height: 0.8em }
-.stub-gold {margin: 0; background-color: #fce016; border-bottom: 1px dashed rgba(0,0,0,0.5)}
+.station { font-size: 6.4em; color: #f7f7f7; margin-bottom: 0.5em; line-height: 0.8em }
+.stub-gold {margin: 0; background-color: #fce016; border-bottom: 1px dashed rgba(255,255,255,0.5)}
 .stub-gold span {font-size: 0.5em; color: rgba(0,0,0,0.4); display: block; margin-bottom: -0.7em}
 .stub-blue {margin: 0; color: #f7f7f7; background-color: #003d6b; border-bottom: 1px dashed rgba(0,0,0,0.5)}
 .stub-blue span {font-size: 0.5em; color: rgba(255,255,255,0.6); display: block; margin-bottom: -0.7em}
 .stub-bottom {background-color: #333; border-bottom: 1px solid rgba(0,0,0,0.5); color: #f7f7f7; border-top: 1px dashed rgba(255, 255, 255, 0.3)}
 .stub-bottom:last-child {border-bottom-left-radius: 12px; border-bottom-right-radius: 12px; margin-bottom: 0}
-.start > p, .end > p { margin: 0 0 0.5em; font-size: 4.8em; padding: 0 0.5em; line-height: 0.8em}
+.start > p, .end > p { margin: 0 0 0.5em; font-size: 5.6em; padding: 0 0.5em; line-height: 0.8em}
 
 .to > p:after { /*background: url(../images/iconic/raster/gray_dark/arrow_right_32x32.png) 50% 50% no-repeat;*/ margin: 0.5em 0; font-size: 3.2em; text-align: center; padding: 0 0.5em; font-family: "IconicStroke"; content: "4" }
-.time { margin: .65em .5em .5em 0; font-size: 6.4em; padding: 0 0.35em }
+.time { margin: .65em .5em .5em 0; font-size: 5.6em; padding: 0 0.55em }
 .time li {float: left; margin-right:.35em}
 .time span { color: #cfcfcf }
 h6 span { padding-right: 1em; background-color: #f0f0f0; text-shadow: 0 2px 0 #fff }
