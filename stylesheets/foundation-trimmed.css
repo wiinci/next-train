@@ -48,8 +48,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
   margin: 0;
@@ -60,7 +60,7 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
@@ -97,7 +97,7 @@ h3 { font-size: 2.1em; margin-bottom: 1.14285714em }
 h4 { font-size: 1.8em; margin-bottom: 1.33333333em }
 h5 { font-size: 1.6em; margin-bottom: 1.5em }
 h6 { font-size: 1.1em; margin-bottom: -2.18181818em; letter-spacing: 0.2em; text-transform: uppercase; color: #777; font-family: 'MolotRegular'; background: url(../images/misc/dots.png) 10% 50% repeat-x }
-.small { font-size: 1.1em; margin: 2.18181818em 0 0; color: #777; line-height: 1.5em; letter-spacing: 0.03em; text-align: justify; background: url(../images/misc/squares.png) repeat rgba(240,240,240,0.5); text-shadow: 0 2px 0 #fff }
+.small { font-size: 1.1em; margin: 2.18181818em 0 0; color: #777; line-height: 1.5em; letter-spacing: 0.03em; text-align: justify; background: url(../images/misc/squares.png) repeat rgba(240,240,240,0.5); text-shadow: 0 1px 0 #fff }
 .amp{font-family:palatino,'palatino linotype',georgia,serif;font-style:italic;}
 .allcaps{letter-spacing:2px;text-transform: uppercase}
 .molot { font-family: 'MolotRegular' }
@@ -109,20 +109,20 @@ h6 { font-size: 1.1em; margin-bottom: -2.18181818em; letter-spacing: 0.2em; text
 /*----------------------------------------------------
  Main
 ----------------------------------------------------*/
-h1 + p { text-shadow: 0 2px 0 #fff; margin-top: -.65em; padding-left: .3em }
+h1 + p { text-shadow: 0 1px 0 #fff; margin-top: -.65em; padding-left: .3em }
 #about { border-radius: 8px; background: url(../images/misc/squares.png) repeat rgba(255,255,255,.56); box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15), 0 2px 0 rgba(255, 255, 255, 0.8); margin: 0; padding: 1.5em 1em}
 #about q:before {font-family: "IconicStroke"; content: "\""; font-size: 1.2em; text-shadow: 0 1px 0 #fff}
-#about + p { font-size: 1.5em; margin: 1.5em 0; color: rgba(0,0,0,0.5); text-align: center; text-shadow: 0 1px 0 #fff }
+#about + p { font-size: 2.5em; margin: 1.5em 0; color: rgba(0,0,0,0.5); text-align: center; text-shadow: 0 1px 0 #fff, 0 2px 0 #fff }
 #about + p:before,#about + p:after { color: rgba(0,0,0,0.32); content: "★"; font-size: 90%; position: absolute}
-#about + p:after { right: 7em }
-#about + p:before { left: 7em; }
+#about + p:after { right: 9em }
+#about + p:before { left: 9em; }
 .schedule, #spinner { background-color: rgba(255,255,255,0.9); border: 5px solid transparent; border-radius: 16px; box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.25) }
 #spinner { background: url("../images/misc/spinner.gif") 50% 50% no-repeat rgba(0,0,0,0.06); height: 20em; display: none; width: 96%; margin: 1em auto 2.5em }
 .stub-top p {margin-top: 0; padding: 0 .5em}
 .stub-top p:first-child, .stub-gold > p, .stub-blue > p, .stub-bottom > p { margin-top: 0; padding: .35em 0.5em }
-.stub-top, .stub-gold, .stub-blue, .stub-bottom {background: url("../images/misc/squares.png") repeat;  margin: 0 0 5px;text-shadow:0 1px 0 transparent, 0 2px 0 rgba(0, 0, 0, 0.1)}
+.stub-top, .stub-gold, .stub-blue, .stub-bottom {background: url("../images/misc/squares.png") repeat;  margin: 0 0 5px;text-shadow:0 1px 0 transparent, 0 2px 0 rgba(0, 0, 0, 0.3)}
 .stub-top { background-color: #287233; color: #fff; border-bottom: 1px solid rgba(0,0,0,0.5); border-top-left-radius: 12px; border-top-right-radius: 12px;}
-.title { border-bottom: 3px double rgba(255, 255, 255, 0.1) }
+.title { border-bottom: 3px double rgba(0,0,0,0.1) }
 .title span { background-color: #eee; color: #444; padding: 0 0.3em; border-radius: 4px; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1), 0 1px 0 transparent, 0 2px 0 #fff; box-shadow:0 2px 0 rgba(0, 0, 0, 0.2) }
 .station { font-size: 4.8em; color: #f7f7f7; margin-bottom: 0.5em; line-height: 0.8em }
 .stub-gold {margin: 0; background-color: #fce016; border-bottom: 1px dashed rgba(0,0,0,0.5)}
@@ -139,7 +139,7 @@ h1 + p { text-shadow: 0 2px 0 #fff; margin-top: -.65em; padding-left: .3em }
 .time span { color: #cfcfcf }
 h6 span { padding-right: 1em; background-color: #f0f0f0; text-shadow: 0 2px 0 #fff }
 #by {font-size: 1.2em; text-align: right; margin-bottom: 1.5em; letter-spacing: 0.03em; color: #444; text-shadow: 0 1px 0 #fff}
-#by a {text-shadow: 0 1px 0 rgba(0, 0, 0, 0.6),1px 2px 0 rgba(0, 0, 0, 0.6)}
+#by a {text-shadow: 0 1px 0 transparent, 0px 2px 0 rgba(0, 0, 0, 0.5)}
 /*
 h6 span { font-size: 1.1em; margin-bottom: -2.18181818em; letter-spacing: 0.2em; text-transform: uppercase; color: #777; font-family: 'MolotRegular'; display: block}
 h6 span:after { border-top: 1px dotted #777; content: ""; display: block; height: 0.1em; margin-top: 1.1em; float: right}
@@ -156,7 +156,7 @@ ul.square { list-style: square outside; }
 ul.circle { list-style: circle outside; }
 ul.disc { list-style: disc outside; }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
 :: Misc
 ---------------------------------------------------*/
 .left       { float: left; }
@@ -238,9 +238,9 @@ img { -ms-interpolation-mode: bicubic; }
 @media only screen and (device-width: 768px), (device-width: 800px) {
   /* Currently unused */
 }
-  
+
 /* Mobile */
-@media only screen and (max-width: 767px) {		
+@media only screen and (max-width: 767px) {
   body { -webkit-text-size-adjust: none; -ms-text-size-adjust: none; width: 100%; min-width: 0; margin-left: 0; margin-right: 0; padding-left: 0; padding-right: 0; }
   .container { min-width: 0; margin-left: 0; margin-right: 0; }
   .row { width: 98%; min-width: 0; margin-left: 0; margin-right: 0; }
@@ -260,19 +260,19 @@ img { -ms-interpolation-mode: bicubic; }
 
 /* --------------------------------------------------
 :: Block Grids
--------------------------------------------------- */	
+-------------------------------------------------- */
 @media only screen and (max-width: 767px) {
   .block-grid.mobile { margin-left: 0; }
   .block-grid.mobile li { float: none; width: 100%; margin-left: 0; }
 }
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
 :: Mobile Visibility Affordances
 ---------------------------------------------------*/
-.show-on-phones { display: none !important; }	
+.show-on-phones { display: none !important; }
 .show-on-tablets { display: none !important; }
 .show-on-desktops { display: block !important; }
-.hide-on-phones { display: block !important; }	
+.hide-on-phones { display: block !important; }
 .hide-on-tablets { display: block !important; }
 .hide-on-desktops { display: none !important; }
 
