@@ -1,13 +1,17 @@
 ﻿$(document).ready(function() {
+  // Hides mobile browser's address bar when page is done loading.
+  window.addEventListener('load', function(e) {
+	setTimeout(function() { window.scrollTo(0, 1); }, 1);
+  }, false);
   $('#sacrttime').hide();
   $('#spinner').show();
-	navigator.geolocation.getCurrentPosition(init, error);
+  navigator.geolocation.getCurrentPosition(init, error);
 });
 function error(msg) {
-	//console.log(msg);
+  console.log(msg);
 }
 function init(a) {
-	myCommute.lat = a.coords.latitude;
+  myCommute.lat = a.coords.latitude;
   myCommute.lng = a.coords.longitude;
   myCommute.getNearestStation();
 }
@@ -74,7 +78,7 @@ var myCommute = {
     //alert(e);
     myCommute.closeststation = myCommute.names[e]; // use that index to get the name of the station
     //console.log(myCommute.closeststation, myCommute.distancetocloseststation);
-    myCommute.getTrainArrivalTime();    
+    myCommute.getTrainArrivalTime();
   },
 	getTrainArrivalTime: function(){
 		var eup, edn, er, up=[], dn=[], r=[], t=[];
@@ -199,9 +203,9 @@ var myCommute = {
     var refresh = setInterval(function(){
       $('.stub-bottom').find('ul').each(function(index){
         z = index;
-        min = z===0 ? $('.min').html().slice(0,2) : $('.min'+z).html().slice(0,2);
-        sec = z===0 ? $('.sec').html().slice(0,2) : $('.sec'+z).html().slice(0,2);
-        if (sec==0 && min==0) {
+        min = z===0 ? parseInt($('.min').html().slice(0,2)) : parseInt($('.min'+z).html().slice(0,2));
+        sec = z===0 ? parseInt($('.sec').html().slice(0,2)) : parseInt($('.sec'+z).html().slice(0,2));
+        if (sec===0 && min===0) {
           clearInterval(refresh);
           myCommute.UP = [];
           myCommute.DN = [];
@@ -211,7 +215,7 @@ var myCommute = {
           $('#stublist').empty().remove();
           myCommute.getTrainArrivalTime();
         } else {
-          if (sec == 0) {--min; sec=60;}
+          if (sec===0) {--min; sec=60;}
           --sec;
           min == 1 ? m="Minute" : m="Minutes";
           sec == 1 ? s="Second" : s="Seconds";

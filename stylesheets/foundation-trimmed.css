@@ -80,7 +80,10 @@ table {
   border-spacing: 0;
 }
 
-body { background: url(../images/misc/concrete_bg.png); font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, "Calibri", "Lucida Grande", sans-serif; font-size: 62.5%; line-height: 2.4em; color: #444; position: relative; -webkit-font-smoothing: antialiased }
+body { background: url(../images/misc/concrete_bg.png); font-family: "Helvetica Neue", "HelveticaNeue", Helvetica, "Calibri", "Lucida Grande", sans-serif; font-size: 62.5%; line-height: 2.4em; color: #444; position: relative; -webkit-font-smoothing: antialiased; transition:all .2s linear;
+    -o-transition:all .2s linear;
+    -moz-transition:all .2s linear;
+    -webkit-transition:all .2s linear }
 ::selection { background: #faf8c1; color: #444; text-shadow: none; letter-spacing: 0.01em }
 ::-moz-selection { background: #faf8c1; color: #444; text-shadow: none }
 /*--------
@@ -98,6 +101,8 @@ h4 { font-size: 1.8em; margin-bottom: 1.33333333em }
 h5 { font-size: 1.6em; margin-bottom: 1.5em }
 h6 { font-size: 1.1em; margin-bottom: -2.18181818em; letter-spacing: 0.2em; text-transform: uppercase; color: #777; font-family: 'MolotRegular'; background: url(../images/misc/dots.png) 10% 50% repeat-x }
 .small { font-size: 1.1em; margin: 2.18181818em 0 0; color: #777; line-height: 1.5em; letter-spacing: 0.03em; text-align: justify; background: url(../images/misc/squares.png) repeat rgba(240,240,240,0.5); text-shadow: 0 1px 0 #fff }
+p.small:last-child { margin: 2.18181818em 0 }
+.small a {text-shadow: 0 1px 0 rgba(0,0,0,0.5)}
 .amp{font-family:palatino,'palatino linotype',georgia,serif;font-style:italic;}
 .allcaps{letter-spacing:2px;text-transform: uppercase}
 .molot { font-family: 'MolotRegular' }
@@ -109,6 +114,8 @@ h6 { font-size: 1.1em; margin-bottom: -2.18181818em; letter-spacing: 0.2em; text
 /*----------------------------------------------------
  Main
 ----------------------------------------------------*/
+#sacrttime { display: none }
+#spinner { display: block }
 h1 + p { text-shadow: 0 1px 0 #fff; margin-top: -.65em; padding-left: .3em }
 #about { border-radius: 8px; background: url(../images/misc/squares.png) repeat rgba(255,255,255,.56); box-shadow: 0 -2px 0 rgba(0, 0, 0, 0.15), 0 2px 0 rgba(255, 255, 255, 0.8); margin: 0; padding: 1.5em 1em}
 #about q:before {font-family: "IconicStroke"; content: "\""; font-size: 1.2em; text-shadow: 0 1px 0 #fff}
@@ -134,7 +141,7 @@ h1 + p { text-shadow: 0 1px 0 #fff; margin-top: -.65em; padding-left: .3em }
 .start > p, .end > p { margin: 0 0 0.5em; font-size: 5.6em; padding: 0 0.5em; line-height: 0.8em}
 
 .to > p:after { /*background: url(../images/iconic/raster/gray_dark/arrow_right_32x32.png) 50% 50% no-repeat;*/ margin: 0.5em 0; font-size: 3.2em; text-align: center; padding: 0 0.5em; font-family: "IconicStroke"; content: "4" }
-.time { margin: .65em .5em .5em 0; font-size: 5.6em; padding: 0 0.55em }
+.time { margin: .65em .5em .5em 0; font-size: 5.2em; padding: 0 0.55em }
 .time li {float: left; margin-right:.35em}
 .time span { color: #cfcfcf }
 h6 span { padding-right: 1em; background-color: #f0f0f0; text-shadow: 0 1px 0 #fff }

@@ -8,7 +8,10 @@
 <head>
 	<meta charset="utf-8" />
 	<!-- Set the viewport width to device width for mobile -->
-	<meta name="viewport" content="width=device-width" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- Full scree browsing -->
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
 	<title>SacRT Time &ndash; Sacramento Light Rail Schedule</title>
 
@@ -24,7 +27,16 @@
 	<!--[if lt IE 9]>
 		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push(['_setAccount', 'UA-31071855-1']);
+	  _gaq.push(['_trackPageview']);
+	  (function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	  })();
+	</script>
 </head>
 <body>
 	<div class="container">
@@ -52,7 +64,7 @@
         <p>★</p>
         <h6 class="disclaimer"><span>Disclaimer</span></h6>
         <p class="small">The content of this page is for general information purposes only. Any reliance you place on such information is therefore strictly at your own risk. In no event will we be liable for any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.</p>
-        <p class="small">SacRT Time is a personal project of Mardav Wala and is not affiliated to the Sacramento Regional Transit in any form.</p>
+        <p class="small">SacRT Time is a personal project of Mardav Wala and is not affiliated to the Sacramento Regional Transit in any form. All times are obtained from the official <a href="http://www.sacrt.com/">Sacramento Regional Transit website</a>.</p>
         <h6 class="privacy"><span>Privacy Policy</span></h6>
         <p class="small">SacRT Time is committed to ensuring that your privacy is protected. We only collect the location information relevant to look up the nearest station to you. This information is neither stored nor is it used in any way to identify you.</p>
 			</section>
@@ -83,16 +95,6 @@
 		<li class="sec{{=index}}">{{=secs}} <span>Seconds</span></li>
 	  </ul>
 	</div>
-	</script>
-	<script type="text/javascript">
-	  var _gaq = _gaq || [];
-	  _gaq.push(['_setAccount', 'UA-31071855-1']);
-	  _gaq.push(['_trackPageview']);
-	  (function() {
-		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-	  })();
 	</script>
 </body>
 </html>
