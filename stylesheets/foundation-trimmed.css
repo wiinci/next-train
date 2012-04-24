@@ -101,7 +101,7 @@ h4 { font-size: 1.8em; margin-bottom: 1.33333333em }
 h5 { font-size: 1.6em; margin-bottom: 1.5em }
 h6 { font-size: 1.1em; margin-bottom: -2.18181818em; letter-spacing: 0.2em; text-transform: uppercase; color: #777; font-family: 'MolotRegular'; background: url(../images/misc/dots.png) 10% 50% repeat-x }
 .small { font-size: 1.1em; margin: 2.18181818em 0 0; color: #777; line-height: 1.5em; letter-spacing: 0.03em; text-align: justify; background: url(../images/misc/squares.png) repeat rgba(240,240,240,0.5); text-shadow: 0 1px 0 #fff }
-p.small:last-child { margin: 2.18181818em 0 }
+.disclaimer .small:last-child { margin: 2.18181818em 0 }
 .small a {text-shadow: 0 1px 0 rgba(0,0,0,0.5)}
 .amp{font-family:palatino,'palatino linotype',georgia,serif;font-style:italic;}
 .allcaps{letter-spacing:2px;text-transform: uppercase}
