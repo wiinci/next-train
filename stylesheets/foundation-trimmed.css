@@ -121,8 +121,8 @@ h1 + p { text-shadow: 0 1px 0 #fff; margin-top: -.65em; padding-left: .3em }
 #about q:before {font-family: "IconicStroke"; content: "\""; font-size: 1.2em; text-shadow: 0 1px 0 #fff}
 #about + p { font-size: 2.5em; margin: 1.5em 0; color: rgba(0,0,0,0.5); text-align: center; text-shadow: 0 1px 0 #fff, 0 2px 0 #fff }
 #about + p:before,#about + p:after { color: rgba(0,0,0,0.32); content: "★"; font-size: 90%; position: absolute}
-#about + p:after { right: 9em }
-#about + p:before { left: 9em; }
+#about + p:after { right: 11em }
+#about + p:before { left: 11em; }
 .schedule, #spinner { background-color: rgba(255,255,255,0.9); border: 5px solid transparent; border-radius: 16px; box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.25) }
 #spinner { background: url("../images/misc/spinner.gif") 50% 50% no-repeat rgba(0,0,0,0.06); height: 20em; display: none; width: 96%; margin: 1em auto 2.5em }
 .stub-top p {margin-top: 0; padding: 0 .5em}
