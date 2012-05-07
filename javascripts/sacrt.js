@@ -110,10 +110,10 @@ var myCommute = {
 				t = [2, 1]; break;
 		}
 		if (r.length > 1) {
-			yql1="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.sacrt.com%2Fschedules%2Fcurrent%2Froutes%2FR" + r[0] + ".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[0] + "%5D%2Ftr%2Ftd%5B" + up[0] + "%5D%2Fp'&format=json&callback=?";
-			yql2="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.sacrt.com%2Fschedules%2Fcurrent%2Froutes%2FR" + r[0] + ".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[1] + "%5D%2Ftr%2Ftd%5B" + dn[0] + "%5D%2Fp'&format=json&callback=?";
-			yql3="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.sacrt.com%2Fschedules%2Fcurrent%2Froutes%2FR" + r[1] + ".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[0] + "%5D%2Ftr%2Ftd%5B" + up[1] + "%5D%2Fp'&format=json&callback=?";
-			yql4="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.sacrt.com%2Fschedules%2Fcurrent%2Froutes%2FR" + r[1] + ".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[1] + "%5D%2Ftr%2Ftd%5B" + dn[1] + "%5D%2Fp'&format=json&callback=?";
+			yql1="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fsacrtti.me%2Flookup%2FR" + r[0] + ".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[0] + "%5D%2Ftbody%2Ftr%2Ftd%5B" + up[0] + "%5D%2Fp'&format=json&callback=?";
+			yql2="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fsacrtti.me%2Flookup%2FR" + r[0] + ".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[1] + "%5D%2Ftbody%2Ftr%2Ftd%5B" + dn[0] + "%5D%2Fp'&format=json&callback=?";
+			yql3="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fsacrtti.me%2Flookup%2FR" + r[1] + ".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[0] + "%5D%2Ftbody%2Ftr%2Ftd%5B" + up[1] + "%5D%2Fp'&format=json&callback=?";
+			yql4="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fsacrtti.me%2Flookup%2FR" + r[1] + ".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[1] + "%5D%2Ftbody%2Ftr%2Ftd%5B" + dn[1] + "%5D%2Fp'&format=json&callback=?";
 			//execute yqls
 			myCommute.execYQL(yql1, function(){
 				var t1 = "";
@@ -141,8 +141,8 @@ var myCommute = {
 				});
 			});
 		} else {
-			yql1="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.sacrt.com%2Fschedules%2Fcurrent%2Froutes%2FR" + 507 +".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[0] + "%5D%2Ftr%2Ftd%5B" + up[0] + "%5D%2Fp'&format=json&callback=?";
-			yql2="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fwww.sacrt.com%2Fschedules%2Fcurrent%2Froutes%2FR" + 507 +".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[1] + "%5D%2Ftr%2Ftd%5B" + dn[0] + "%5D%2Fp'&format=json&callback=?";
+			yql1="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fsacrtti.me%2Flookup%2FR" + 507 +".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[0] + "%5D%2Ftbody%2Ftr%2Ftd%5B" + up[0] + "%5D%2Fp'&format=json&callback=?";
+			yql2="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D%22http%3A%2F%2Fsacrtti.me%2Flookup%2FR" + 507 +".htm%22%20and%20xpath%3D'%2F%2Ftable%5B" + t[1] + "%5D%2Ftbody%2Ftr%2Ftd%5B" + dn[0] + "%5D%2Fp'&format=json&callback=?";
 			//execute yqls
 			myCommute.execYQL(yql1, function(){
         //alert("yql1");
@@ -199,12 +199,14 @@ var myCommute = {
     myCommute.updateTime();
 	},
   updateTime: function() {
-    var min, sec, m, s;
+    var min, minflag, sec, m, s;
     var refresh = setInterval(function(){
       $('.stub-bottom').find('ul').each(function(index){
         z = index;
         min = z===0 ? parseInt($('.min').html().slice(0,2)) : parseInt($('.min'+z).html().slice(0,2));
         sec = z===0 ? parseInt($('.sec').html().slice(0,2)) : parseInt($('.sec'+z).html().slice(0,2));
+        if(isNaN(min)) {min=0;}
+        if(isNaN(sec)) {sec=0;}
         if (sec===0 && min===0) {
           clearInterval(refresh);
           myCommute.UP = [];
@@ -215,10 +217,27 @@ var myCommute = {
           $('#stublist').empty().remove();
           myCommute.getTrainArrivalTime();
         } else {
-          if (sec===0) {--min; sec=60;}
-          --sec;
-          min == 1 ? m="Minute" : m="Minutes";
-          sec == 1 ? s="Second" : s="Seconds";
+          if (sec===0) {
+          	if (min===1) {minflag = 1}
+          	parseInt(--min);
+            if(min===0 && minflag===0) {
+              clearInterval(refresh);
+              myCommute.UP = [];
+              myCommute.DN = [];
+              myCommute.epochTime = [];
+              myCommute.routes = [];
+              //console.log(myCommute.UP,myCommute.DN,myCommute.epochTime,myCommute.routes)
+              $('#stublist').empty().remove();
+              myCommute.getTrainArrivalTime();
+            } else {
+              minflag = 0;
+              sec=59;
+            }
+          } else {
+            parseInt(--sec);
+          }
+          min===1 ? m="Minute" : m="Minutes";
+          sec===1 ? s="Second" : s="Seconds";
           z===0 ? $('.min').html(min + " <span>" + m + "</span>") : $('.min'+z).html(min + " <span>" + m + "</span>");
           z===0 ? $('.sec').html(sec + " <span>" + s + "</span>") : $('.sec'+z).html(sec + " <span>" + s + "</span>");
         }
@@ -254,9 +273,10 @@ var myCommute = {
 		ap=c.substr(-1);
 		ch=c.split(":")[0];
 		cm=c.split(":")[1].substr(0,2);
-		if (ap==='p') {h=parseInt(ch)+12} else {h=parseInt(ch)}
-		if (h==24) {h=0}
+    h=parseInt(ch);
 		m=parseInt(cm);
+		if (ap==='p') {h==12 ? h=h : h+=12}
+//		if (h==24) {h=0}
 		d=new Date(n.getFullYear(),n.getMonth(),n.getDate(),h,m,0);
 		return d;
 	},
